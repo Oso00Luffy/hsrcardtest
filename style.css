@@ -1,0 +1,292 @@
+html {
+  height: 100%;
+  oveflow: hidden;
+  font-size: 0.7rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  perspective: 1000px;
+  oveflow: hidden;
+}
+
+.card {
+  height: auto;
+  position: relative;
+  transform: rotateY(21deg) rotateZ(9deg);
+  transform-style: preserve-3d;
+  --cut: 0.75rem;
+  --glass-color: rgba(158,158,171,0.07);
+}
+
+.card-front-thick-wrapper-back {
+  transform: translateZ(-2.5rem);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2.25rem;
+  right: -1.75rem;
+  transform-style: preserve-3d;
+}
+
+.card-front-thick-wrapper {
+  overflow: visible;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-img {
+  width: 20rem;
+  transform-style: preserve-3d;
+  transform: translateZ(-0.5rem) translateY(0.25rem) translateX(0rem);
+}
+
+.card-thick-left:before {
+  background: var(--glass-color);
+  content: "";
+  height: calc(1.5 * var(--cut));
+  width: 0.5rem;
+  position: absolute;
+  top: calc(-0.75 * var(--cut));
+  transform-style: preserve-3d;
+  transform: rotateX(-45deg) translateY(calc(-0.75 * var(--cut)));
+}
+
+.card-thick-left:after {
+  background: inherit;
+  background-image: linear-gradient(135deg, rgba(219,224,255,0.75) 10%, var(--glass-color) 19%, var(--glass-color) 87%);
+  background-size: 100% 1000%;
+  content: "";
+  height: calc(1.5 * var(--cut));
+  width: 0.5rem;
+  position: absolute;
+  bottom: calc(-0.75 * var(--cut));
+  transform-style: preserve-3d;
+  transform: scaleX(-1) rotateX(-135deg) translateY(calc(-0.75 * var(--cut)));
+}
+
+.card-thick-left {
+  top: var(--cut);
+  left: 0rem;
+  position: absolute;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 100% 500%;
+  background-image: linear-gradient(135deg, var(--glass-color) 0%, rgba(219,224,255,0.75) 9%, rgba(219,224,255,0.75) 19%, var(--glass-color) 23%, var(--glass-color) 50%, rgba(219,224,255,0.75) 52%, rgba(219,224,255,0.75) 55%, var(--glass-color) 57%, var(--glass-color) 69%, rgba(219,224,255,0.75) 71%, rgba(219,224,255,0.75) 74%, var(--glass-color) 76%, var(--glass-color) 81%, rgba(219,224,255,0.75) 83%, rgba(219,224,255,0.75) 85%, var(--glass-color) 87%);
+  height: calc(100% - var(--cut) * 2);
+  width: 0.5rem;
+  transform-style: preserve-3d;
+  transform: rotateY(90deg) scaleY(-1)
+translateX(-0.75rem) translateZ(-0.25rem);
+}
+
+.card-thick-right:before {
+  background: inherit;
+  background-image: linear-gradient(45deg, rgba(219,224,255,0.75) 20%, var(--glass-color) 29%, var(--glass-color) 87%);
+  background-size: 100% 1000%;
+  content: "";
+  height: calc(1.5 * var(--cut));
+  width: 0.5rem;
+  position: absolute;
+  top: calc(-0.75 * var(--cut));
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) translateY(calc(-0.75 * var(--cut))) scaleY(-1);
+}
+
+.card-thick-right:after {
+  background: inherit;
+  background-image: linear-gradient(45deg, rgba(219,224,255,0.75) 20%, var(--glass-color) 29%, var(--glass-color) 87%);
+  background-size: 100% 1000%;
+  content: "";
+  height: calc(1.5 * var(--cut));
+  width: 0.5rem;
+  position: absolute;
+  bottom: calc(-0.75 * var(--cut));
+  transform-style: preserve-3d;
+  transform: rotateX(135deg) translateY(calc(-0.75 * var(--cut)));
+}
+
+.card-thick-right {
+  top: var(--cut);
+  right: -0.5rem;
+  position: absolute;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 100% 500%;
+  background-image: linear-gradient(45deg, var(--glass-color) 0%, rgba(219,224,255,0.75) 9%, rgba(219,224,255,0.75) 19%, var(--glass-color) 23%, var(--glass-color) 50%, rgba(219,224,255,0.75) 52%, rgba(219,224,255,0.75) 55%, var(--glass-color) 57%, var(--glass-color) 69%, rgba(219,224,255,0.75) 71%, rgba(219,224,255,0.75) 74%, var(--glass-color) 76%, var(--glass-color) 81%, rgba(219,224,255,0.75) 83%, rgba(219,224,255,0.75) 85%, var(--glass-color) 87%);
+  height: calc(100% - var(--cut) * 2);
+  width: 0.5rem;
+  transform-style: preserve-3d;
+  transform: rotateY(90deg) translateX(-0.75rem) translateZ(-0.25rem);
+}
+
+.card-thick-mid {
+  transform-style: preserve-3d;
+  width: calc(100% - 2rem);
+  height: 100%;
+  position: relative;
+}
+
+.card-thick-mid:after {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  background: var(--border-color-mid);
+  position: absolute;
+  left: 1rem;
+  bottom: -0.5rem;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateY(0.75rem) translateZ(0.25rem);
+}
+
+.card-thick-mid:before {
+  content: "";
+  height: 0.5rem;
+  width: 100%;
+  background: var(--border-color-mid);
+  position: absolute;
+  left: 1rem;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateY(0.75rem) translateZ(0.25rem);
+}
+
+.card-instanse {
+  width: 100%;
+  height: 100%;
+  top: -1rem;
+  left: -1rem;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  top: 0rem;
+   left: 0rem;
+  position: absolute;
+  transform-style: preserve-3d;
+  background-color: var(--glass-color);
+  transform: translateZ(-1.5rem) translateY(2.25rem) translateX(1.75rem);
+  clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut));
+}
+
+.card-front {
+  width: 100%;
+  height: 100%;
+  top: 0rem;
+   left: 0rem;
+  position: absolute;
+  transform-style: preserve-3d;
+  background-color: var(--glass-color);
+  transform: translateZ(1rem);
+  clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut));
+}
+
+.card-front-color {
+  width: 30rem;
+  height: 100%;
+  position: absolute;
+  background: radial-gradient(circle, rgba(193,138,147,0.35) 0%, rgba(255,255,255,0) 70%);
+  top: -50%;
+  left: -50%;
+}
+
+.card-blick-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut));
+}
+
+.card-blick-border-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-blick {
+  z-index: 500;
+background: linear-gradient(45deg, var(--glass-color) 0%, rgba(219,224,255,0.28) 9%, rgba(219,224,255,0.28) 19%, var(--glass-color) 30%, var(--glass-color) 50%, rgba(219,224,255,0.14) 52%, rgba(219,224,255,0.14) 55%, var(--glass-color) 57%, var(--glass-color) 69%, rgba(219,224,255,0.3) 71%, rgba(219,224,255,0.3) 74%, var(--glass-color) 76%, var(--glass-color) 81%, rgba(219,224,255,0.14) 83%, rgba(219,224,255,0.14) 85%, var(--glass-color) 87%);
+  position: absolute;
+  width: 500%;
+  height: 100%;
+  left: 200%;
+}
+
+.card-front-hud-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front-hud {
+  --padding: 2.5rem;
+  width: calc(100% - var(--padding));
+  height: calc(100% - var(--padding));
+  border: 2px solid #dbd3c1;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.card-hud-wrapper {
+  z-index: 9999;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  juscity-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.card-hud-path {
+  height: fit-content;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-hud-path img {
+  height: 2.5rem;
+  padding: 0.1rem;
+  background-color: #0000002e;
+  border-radius: 100%;
+  border: 2px solid #787c83;
+}
+
+.card-hud-stars {
+  color: #fbb937;
+  font-size: 3em;
+  position: absolute;
+  left: 3.5rem;
+  display: flex;
+}
+
+.hud-star {
+  text-shadow: 0px 2px 5px rgba(0,0,0,0.55);
+}
+
+.card-shine {
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 30%, rgba(158,158,171,0) 60%);
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform-style: preserve-3d;
+  transform: rotateZ(-9deg) rotateX(-90deg) translateX(-12rem) translateY(-8rem) translateZ(-13rem) perspective(10px);
+}
